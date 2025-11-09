@@ -1,0 +1,19 @@
+name: Docker Image CI
+
+on:
+  pull_request:
+    branches: [ "main" ]
+jobs:
+  build:
+    name: docker test
+    runs-on: ubuntu-latest 
+    permissions: 
+      contents: read
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag pytest_container:v1
+    - name: Run Docker image
+      run: docker run pytest_container:v1
+  
+    
