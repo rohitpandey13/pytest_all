@@ -1,10 +1,10 @@
-name: Docker Image CI
+name: Docker Image Pull check container success
 
 on:
   pull_request:
     branches: [ "main" ]
 jobs:
-  build:
+  test:
     name: docker test
     runs-on: ubuntu-latest 
     permissions: 
