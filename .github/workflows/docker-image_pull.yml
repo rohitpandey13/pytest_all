@@ -12,7 +12,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag pytest_container:v1
+      run: docker build . --file Dockerfile --tag pytest_container:v1 --no-cache
     - name: Run Docker image
       run: docker run pytest_container:v1
   
